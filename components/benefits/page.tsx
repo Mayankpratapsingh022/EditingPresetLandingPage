@@ -40,18 +40,18 @@ const items = [
   {
     title: "71%",
     description: "Average watch time",
-    header: <Skeleton src="chart" css="bg-gradient-to-r from-secondColor  to-green-300 w-full h-full" size="w-full h-full"  loop={true} speed={0.5} />,
+    header: <Skeleton src="Chart" css="bg-gradient-to-r from-secondColor  to-green-300 w-full h-full" size="w-full h-full"  loop={true} speed={0.5} />,
    
   },
   {
     title: "34%",
     description: "More views",
-    header: <Skeleton   src="eye" css="bg-gradient-to-r from-secondColor  to-green-300 w-full h-full" size="w-full h-full" loop={true} speed={0.5}/>,
+    header: <Skeleton   src="Eye" css="bg-gradient-to-r from-secondColor  to-green-300 w-full h-full" size="w-full h-full" loop={true} speed={0.5}/>,
   },
   {
     title: "53%",
     description: "Editing time reduced, quality improved!",
-    header: <Skeleton   src="timer" css="bg-gradient-to-r from-secondColor  to-green-300 w-full h-full p-6" size="w-full"  loop={true} speed={0.5}/>,
+    header: <Skeleton   src="Timer" css="bg-gradient-to-r from-secondColor  to-green-300 w-full h-full p-6" size="w-full"  loop={true} speed={0.5}/>,
   },
   
 ];
