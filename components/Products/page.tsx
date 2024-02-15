@@ -32,7 +32,17 @@ const ProductItems = [
     },
     {
         src:"/overlyas.webp",
-        title:"Funny SFX",
-        subtitle:"Collection of funny and trendy memes sound effects"
-    }
+        title:"38+ Cinematic Overlays (.mp4)",
+        subtitle:"Transform Your Films with Premium Cinematic Overlays - Editing Presets Every Filmmaker Needs!"
+    },
+    {
+        src:"/icons.webp",
+        title:"347+ Animated High Quality Icons (.gif)",
+        subtitle:"Elevate Your Videos with Premium Icons - Consistent Brand Design, Perfect for Phone Editors!"
+    },
+    {
+        src:"/kinemaster.webp",
+        title:"Kinemaster Editing App (Pro)",
+        subtitle:"No introduction need!"
+    },
 ]
