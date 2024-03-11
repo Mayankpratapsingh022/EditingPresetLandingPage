@@ -16,7 +16,7 @@ export function SpotlightPreview() {
 <div className="w-10/12 lg:w-3/12 flex items-center" id="he">
   <div className="flex justify-center items-center ">
 <HeroAnimaton/></div></div>
-      <div className=" p-1 max-w-7xl  mx-auto relative z-10  w-full pt-1 md:pt-0">
+      <div className=" p-1 max-w-7xl  mx-auto relative z-10 w-full pt-1 md:pt-0">
 
         <h1 className="text-6xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-secondColor to-green-300 bg-opacity-50 p-2">
           Elevate <br />Your Editing

@@ -4,7 +4,7 @@ import { InfiniteMovingCardsDemo } from "../../components/infiniteReview/page";
 import Product from "../../components/Products/page";
 import Testi from "../../components/Testimo/page";
 import Title from "../../components/Title/page";
-import { HeroParallaxDemo } from "../../components/Hero/page";
+
 import Order from "../../components/orderToday/page";
 import Blockquote from "../../components/Reviews/page";
 import BlockReview from "../../components/BlockReview/page";
@@ -12,15 +12,21 @@ import Discount from "../../components/discount/page";
 import { LayoutGridDemo } from "../../components/customer/page";
 import List from "../../components/list/page";
 import Faq from "../../components/faq/page";
+import Step from "../../components/Step/page";
+import HeroBottom from "../../components/Herobottom/page";
+import Download from "../../components/downloadButton/page";
+import Footer from "../../components/Footer/page";
+import Toast from "../../components/Toast/page";
 
 
 
 export default function Home() {
   return (
    <>
-
-
+<Download/>
 <SpotlightPreview/>
+<Toast/>
+<Discount/>
 <Title title="Benefits"/>
 <BentoGridDemo/>
 
@@ -42,6 +48,10 @@ export default function Home() {
 <LayoutGridDemo/></div>
 <List/>
 <Faq/>
+<Step/>
+<Discount/>
+<HeroBottom/>
+<Footer/>
    </>
   );
 }

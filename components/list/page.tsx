@@ -33,7 +33,7 @@ const Loss = [
     return(
         <>
         <div className="p-3 flex justify-center items-center"></div>
-        <div className="p-5 flex flex-wrap justify-center items-center m-3">
+        <div className="p-5 flex flex-wrap justify-center items-start m-3">
 
 
 

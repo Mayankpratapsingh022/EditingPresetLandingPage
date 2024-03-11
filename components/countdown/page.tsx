@@ -1,58 +1,69 @@
 "use client"
-import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
-// NOTE: Change this date to whatever date you want to countdown to :)
-const COUNTDOWN_FROM = "12/3/2024";
-
-const SECOND = 1000;
-const MINUTE = SECOND * 60;
-const HOUR = MINUTE * 60;
-const DAY = HOUR * 24;
+const OFFER_DURATION_HOURS = 6;
 
 const ShiftingCountdown = () => {
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-
   const [remaining, setRemaining] = useState({
     days: 0,
-    hours: 0,
+    hours: OFFER_DURATION_HOURS,
     minutes: 0,
     seconds: 0,
   });
 
   useEffect(() => {
-    intervalRef.current = setInterval(handleCountdown, 1000);
+    const intervalId = setInterval(() => {
+      setRemaining((prevRemaining) => {
+        const { days, hours, minutes, seconds } = prevRemaining;
 
-    return () => clearInterval(intervalRef.current || undefined);
+        if (days === 0 && hours === 0 && minutes === 0 && seconds === 0) {
+          clearInterval(intervalId);
+          return prevRemaining;
+        }
+
+        if (seconds === 0) {
+          if (minutes === 0) {
+            if (hours === 0) {
+              return {
+                days: days - 1,
+                hours: 23,
+                minutes: 59,
+                seconds: 59,
+              };
+            }
+            return {
+              days,
+              hours: hours - 1,
+              minutes: 59,
+              seconds: 59,
+            };
+          }
+          return {
+            days,
+            hours,
+            minutes: minutes - 1,
+            seconds: 59,
+          };
+        }
+        return {
+          days,
+          hours,
+          minutes,
+          seconds: seconds - 1,
+        };
+      });
+    }, 1000);
+
+    return () => clearInterval(intervalId);
   }, []);
-
-  const handleCountdown = () => {
-    const end = new Date(COUNTDOWN_FROM);
-
-    const now = new Date();
-
-    const distance = +end - +now;
-
-    const days = Math.floor(distance / DAY);
-    const hours = Math.floor((distance % DAY) / HOUR);
-    const minutes = Math.floor((distance % HOUR) / MINUTE);
-    const seconds = Math.floor((distance % MINUTE) / SECOND);
-
-    setRemaining({
-      days,
-      hours,
-      minutes,
-      seconds,
-    });
-  };
 
   return (
     <div className="p-5">
-      <div className="w-full max-w-5xl  mx-auto bg-gradient-to-br from-secondColor to-green-600 flex items-center ">
-        <CountdownItem num={remaining.days} text="days" />
-        <CountdownItem num={remaining.hours} text="hours" />
-        <CountdownItem num={remaining.minutes} text="minutes" />
-        <CountdownItem num={remaining.seconds} text="seconds" />
+      <div className="w-full max-w-5xl  gap-3 mx-auto  flex items-center ">
+        <CountdownItem num={remaining.days} text="day" />
+        <CountdownItem num={remaining.hours} text="hrs" />
+        <CountdownItem num={remaining.minutes} text="min" />
+        <CountdownItem num={remaining.seconds} text="sec" />
       </div>
     </div>
   );
@@ -60,25 +71,18 @@ const ShiftingCountdown = () => {
 
 const CountdownItem = ({ num, text }: { num: number; text: string }) => {
   return (
-    <div className="font-mono w-1/4 h-24 md:h-36 flex flex-col gap-1 md:gap-2 items-center justify-center border-r-[6px] border-slate-900">
+    <div className="justify-center flex flex-col item-center">
+    <div className="font-mono bg-secondColor rounded-2xl  p-2 flex flex-col gap-1 md:gap-2 items-center justify-center">
       <div className="w-full text-center relative overflow-hidden">
-        <AnimatePresence mode="popLayout">
-          <motion.span
-            key={num}
-            initial={{ y: "100%" }}
-            animate={{ y: "0%" }}
-            exit={{ y: "-100%" }}
-            transition={{ ease: "backIn", duration: 0.75 }}
-            className="block text-2xl md:text-4xl lg:text-6xl xl:text-7xl text-black font-medium"
-          >
-            {num}
-          </motion.span>
-        </AnimatePresence>
+        <span className="block text-2xl md:text-4xl lg:text-6xl xl:text-7xl text-black font-medium">
+          {num.toString().padStart(2, "0")}
+        </span>
       </div>
-      <span className="text-xs md:text-sm lg:text-base font-light text-slate-900">
-        {text}
-      </span>
+     
     </div>
+     <span className="text-xs md:text-sm  lg:text-base font-light p-3 text-center bg-no text-white">
+     {text}
+   </span></div>
   );
 };
 
