@@ -21,7 +21,7 @@ export default function Toast(): JSX.Element {
     }, []);
 
     const getRandomTime = (): number => {
-        const minTime: number = 10000; // 10 seconds in milliseconds
+        const minTime: number = 15000; // 10 seconds in milliseconds
         const maxTime: number = 30000; // 30 seconds in milliseconds
         return Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
     };
@@ -43,15 +43,15 @@ export default function Toast(): JSX.Element {
     // Initial display after 6 seconds
     useEffect(() => {
         const id = setInterval(() => {
-            displayToast();
+        
             const time = getRandomTime();
-            console.log(time)
+           
 
 
             setTimeout(() => {
                 displayToast();
             }, time);
-        }, 15000); 
+        }, 20000); 
         setIntervalId(id);
 
         return () => {
