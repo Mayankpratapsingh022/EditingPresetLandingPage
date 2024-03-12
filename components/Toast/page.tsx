@@ -21,8 +21,8 @@ export default function Toast(): JSX.Element {
     }, []);
 
     const getRandomTime = (): number => {
-        const minTime: number = 15000; // 10 seconds in milliseconds
-        const maxTime: number = 30000; // 30 seconds in milliseconds
+        const minTime: number = 45000; // 10 seconds in milliseconds
+        const maxTime: number = 60000; // 30 seconds in milliseconds
         return Math.floor(Math.random() * (maxTime - minTime + 1)) + minTime;
     };
 
