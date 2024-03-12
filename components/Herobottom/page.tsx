@@ -11,8 +11,8 @@ export default function HeroBottom(){
 
         
 		<div className="flex flex-wrap justify-center">
-			<button className="px-8 py-3 m-2 text-lg font-semibold rounded dark:bg-gray-900 dark:text-secondColor">Download </button>
-		</div>
+		<a href="https://cosmofeed.com/vp/65f036b689a21e00136eb155">	<button className="px-8 py-3 m-2 text-lg font-semibold rounded dark:bg-gray-900 dark:text-secondColor">Download </button>
+		</a>	</div>
 	</div>
 </section>
         </>

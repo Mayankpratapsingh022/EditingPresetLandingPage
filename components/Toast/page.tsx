@@ -33,7 +33,10 @@ export default function Toast(): JSX.Element {
 
         const name: string | undefined = shuffledNames.pop();
         if (name) {
-            toast.success(`${name} Purchased The Bundle Right now`);
+         
+                toast.success(`${name} Purchased The Bundle Right now`);
+            
+        
         }
     };
 
@@ -42,10 +45,13 @@ export default function Toast(): JSX.Element {
         const id = setInterval(() => {
             displayToast();
             const time = getRandomTime();
+            console.log(time)
+
+
             setTimeout(() => {
                 displayToast();
             }, time);
-        }, 10000); // 10 seconds in milliseconds
+        }, 15000); 
         setIntervalId(id);
 
         return () => {

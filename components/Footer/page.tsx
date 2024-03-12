@@ -6,7 +6,7 @@ export default function Footer(){
         <div className="p-6 py-12 pb-10 mb-5  dark:text-white">
 	<div className="container mx-auto">
 
-		<div className="flex flex-col pb-10 lg:flex-row items-center justify-between">
+		<div className="flex flex-col pb-10 lg:flex-col items-center justify-between">
         <Image
       src="/mail.svg"
       width={50}

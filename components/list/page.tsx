@@ -60,7 +60,7 @@ const Loss = [
 					
 				
 					</ul>
-					<a  className="inline-block w-full px-5 py-3 font-bold tracki text-center rounded dark:bg-gray-900 dark:text-red-100">I Don't Want This</a>
+					<a href="https://cosmofeed.com/vp/65f036b689a21e00136eb155"  className="inline-block w-full px-5 py-3 font-bold tracki text-center rounded dark:bg-gray-900 dark:text-red-100">I Don't Want This</a>
 				</div>
 			</div>
             
@@ -87,7 +87,7 @@ const Loss = [
 					
 				
 					</ul>
-					<a rel="noopener noreferrer" href="#" className="inline-block w-full px-5 py-3 font-bold tracki text-center rounded dark:bg-gray-900 dark:text-secondColor">Download Now</a>
+					<a rel="noopener noreferrer" href="https://cosmofeed.com/vp/65f036b689a21e00136eb155" className="inline-block w-full px-5 py-3 font-bold tracki text-center rounded dark:bg-gray-900 dark:text-secondColor">Download Now</a>
 				</div>
 			</div>
             
